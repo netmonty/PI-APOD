@@ -1,0 +1,9 @@
+version: '3'
+services:
+  apod_scheduler:
+    build: .
+    container_name: pi_apod
+    volumes:
+      - ./data:/app  # Map host directory to container for SQLite DB persistence
+    environment:
+      - DAGSTER_HOME=/app  # Set Dagster home
