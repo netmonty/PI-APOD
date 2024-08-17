@@ -15,3 +15,8 @@ Dagster is utilised for pipeline orchestration (https://dagster.io/).
    ```bash
    git clone https://github.com/your-repo/PI-APOD.git
    cd PI-APOD
+2. Build Docker containers
+   ```bash
+   docker compose build
+   docker compose up
+   
