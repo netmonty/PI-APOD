@@ -1,2 +1,3 @@
 requests
 dagster
+psycopg2-binary

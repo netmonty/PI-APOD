@@ -1,11 +1,26 @@
-version: '3'
+version: '3.9'
 services:
   apod_scheduler:
     build: .
     container_name: pi_apod
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:password@db:5432/apod_db  # Connection string to the PostgreSQL container
     ports:
       - "4000:4000"
     volumes:
-      - ./data:/app  # Map host directory to container for SQLite DB persistence
+      - ./app:/app
+
+  db:
+    image: postgres:13
+    container_name: apod_db
     environment:
-      - DAGSTER_HOME=/app  # Set Dagster home
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: apod_db
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:  # Define a named volume for PostgreSQL data persistence
