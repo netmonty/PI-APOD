@@ -8,4 +8,4 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-CMD ["dagster", "api", "grpc", "-m", "apod_pipeline"]
+CMD ["dagster", "api", "grpc", "-m", "apod_pipeline", "--port", "4000"]

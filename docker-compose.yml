@@ -3,6 +3,8 @@ services:
   apod_scheduler:
     build: .
     container_name: pi_apod
+    ports:
+      - "4000:4000"
     volumes:
       - ./data:/app  # Map host directory to container for SQLite DB persistence
     environment:
