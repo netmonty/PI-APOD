@@ -1,3 +1,5 @@
+No longer operational ~ will get round to fixing one day
+
 # PI-APOD
 Containerised API called to NASA's Astronomy Picture of the Day. Designed for RaspberryPi
 
